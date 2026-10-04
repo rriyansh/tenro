@@ -2,10 +2,10 @@ import { useState } from "react";
 
 function escapeText(value: string) {
   return value
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll("\"", """);
+    .replaceAll("&", "&amp;amp;")
+    .replaceAll("<", "&amp;lt;")
+    .replaceAll(">", "&amp;gt;")
+    .replaceAll("\"", "&amp;quot;");
 }
 function inline(source: string) {
   const text = escapeText(source);

@@ -5,7 +5,7 @@ function escapeText(value: string) {
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;")
-    .replaceAll("\"", """);
+    .replaceAll("\"", "&amp;quot;");
 }
 function inline(source: string) {
   const text = escapeText(source);

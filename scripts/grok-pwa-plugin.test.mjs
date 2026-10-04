@@ -85,11 +85,11 @@ test("escapes x:creator values", () => {
   const tags = grokXCreatorHeadTags('"><script>', '1" onclick="alert(1)');
   assert.equal(
     tags[0],
-    '<meta property="x:creator" content=""&gt;&lt;script&gt;">',
+    '<meta property="x:creator" content="&quot;&gt;&lt;script&gt;">',
   );
   assert.equal(
     tags[1],
-    '<meta property="x:creator:id" content="1" onclick="alert(1)">',
+    '<meta property="x:creator:id" content="1&quot; onclick=&quot;alert(1)">',
   );
 });
 
@@ -538,3 +538,4 @@ test("vite plugin bakes og identity as a virtual module", () => {
   assert.match(plugin, /virtual:grok-og-identity/);
   assert.match(plugin, /snapshotOgIdentity/);
 });
+
